@@ -1,7 +1,7 @@
-MAB
+MAB(Multi-Armed Bandit)
 ===
 
-The author had written a simple article about multi-armed bandit[here](http://kunth.github.io/bandit-algorithm/)
+The author had written a simple article about multi-armed bandit [here](http://kunth.github.io/bandit-algorithm/)
 
 The author wants to collect some materials about Multi-Armed bandit here.
 
