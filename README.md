@@ -7,7 +7,7 @@ The author wants to collect some materials about Multi-Armed bandit here.
 
 ## From abroad 
 1. [Bndit algorithm for website optimization(pdf)](http://pdf.th7.cn/down/files/1312/bandit_algorithms_for_website_optimization.pdf) 
-[And the code of this book](https://github.com/johnmyleswhite/BanditsBook)
+, [And the code of this book](https://github.com/johnmyleswhite/BanditsBook)
 
 2. [Algorithms for the multi-armed bandit problem(pdf)](http://www.cs.mcgill.ca/~vkules/bandits.pdf)
 
