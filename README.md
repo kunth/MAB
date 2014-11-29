@@ -14,6 +14,8 @@ The author wants to collect some materials about Multi-Armed bandit here.
 ## From home
 1. [通过试验学习(ppt)](http://netcomm.bjtu.edu.cn/wp-content/uploads/2013/08/%E7%AC%AC%E5%8D%81%E4%B8%89%E8%AF%BE%EF%BC%9A%E9%80%9A%E8%BF%87%E8%AF%95%E9%AA%8C%E5%AD%A6%E4%B9%A0.pptx)
 
+******
+
 `Bandit algorithm for website optimization `
 > 1. **Arm**: For historical reasons, these options are typically referred to as **arms**, so we’ll talk about Arm 1 and Arm 2 and Arm N rather than Option 1, Option 2 or Option N.
 
