@@ -8,7 +8,7 @@ execfile("core.py")
 con = MySQLdb.connect(host="1.1.6.7", user="user", passwd="passwd", db="db", charset="utf8")
 cursor = con.cursor()
 #sql = "select * from journal_read_score_step2"
-sql = "select * from journal_read_score_step2 limit 100"
+sql = "select * from journal_read_score_step2"
 cursor.execute(sql)
 results = cursor.fetchall()
 last_bookid = ""
@@ -47,9 +47,26 @@ for record in results:
                 v[str(record[1])] = float(str(record[-2]))
                 kcv[last_bookid].append(v)
 
+f = open("mail_list.txt", "w")
+sys.stdout = f
+
+dictByUser = {}
+# dictByUser = {'userid':[bookid, bookid, ...], 'userid':[bookid, bookid], ...}
+
 for key,value in kv.items():
+        #f.write(key +  value);
         #print(key, value)
-        v = value
+        #v = value
+    for val in value:
+                if val in dictByUser:
+                        # make sure that the number of the mail that every user receives is less than 5
+                        if len(dictByUser[val]) < 5:
+                                dictByUser[val].append(key)
+                else:
+                        dictByUser[val] = [key]
+
+for key,value in dictByUser.items():
+        print (key, value)
 
 '''
 random.seed(1)
