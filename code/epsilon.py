@@ -13,26 +13,44 @@ cursor.execute(sql)
 results = cursor.fetchall()
 last_bookid = ""
 kv = {}
+kcv = {} #simple key, complex value
 # record[0]: book_id
 # record[1]: user_id
 '''
 kv['02300097'] = ['186845', '174048']
 kv['02300098'] = ['186846', '174041']
+
+kcv['0230097'] = [{'186845':0.08}, {'174048':1.0}]
 '''
 for record in results:
         if last_bookid == "":
                 last_bookid = str(record[0])
                 kv[last_bookid] = []
+                kcv[last_bookid] = []
+
                 kv[last_bookid].append(str(record[1]))
+                v = {}
+                v[str(record[1])] = float(str(record[-2]))
+                kcv[last_bookid].append(v)
         elif last_bookid == str(record[0]):
                 kv[last_bookid].append(str(record[1]))
+                v = {}
+                v[str(record[1])] = float(str(record[-2]))
+                kcv[last_bookid].append(v)
         else:
                 last_bookid = str(record[0])
                 kv[last_bookid] = []
+                kcv[last_bookid] = []
+
                 kv[last_bookid].append(str(record[1]))
+                v = {}
+                v[str(record[1])] = float(str(record[-2]))
+                kcv[last_bookid].append(v)
 
 for key,value in kv.items():
-        print(key, value)
+        #print(key, value)
+        v = value
+
 '''
 random.seed(1)
 means = [0.1, 0.1, 0.1, 0.1, 0.9]
