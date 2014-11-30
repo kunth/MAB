@@ -59,14 +59,15 @@ for key,value in kv.items():
         #v = value
     for val in value:
                 if val in dictByUser:
-                        # make sure that the number of the mail that every user receives is less than 5
-                        if len(dictByUser[val]) < 5:
-                                dictByUser[val].append(key)
+                        #if len(dictByUser[val]) < 5:
+                        dictByUser[val].append(key)
                 else:
                         dictByUser[val] = [key]
 
 for key,value in dictByUser.items():
-        print (key, value)
+        sorted(value, reverse = True)
+        # make sure that the number of the mail that every user receives is less than 5
+        print (key, value[:5])
 
 '''
 random.seed(1)
@@ -87,3 +88,4 @@ for epsilon in [0.1, 0.2, 0.3, 0.4, 0.5]:
       f.write("\t".join([str(results[j][i]) for j in range(len(results))]) + "\n")
 f.close()
 '''
+
