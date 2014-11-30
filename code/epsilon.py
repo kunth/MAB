@@ -22,6 +22,7 @@ kv['02300098'] = ['186846', '174041']
 
 kcv['0230097'] = [{'186845':0.08}, {'174048':1.0}]
 '''
+
 for record in results:
         if last_bookid == "":
                 last_bookid = str(record[0])
@@ -57,35 +58,22 @@ for key,value in kv.items():
         #f.write(key +  value);
         #print(key, value)
         #v = value
-    for val in value:
-                if val in dictByUser:
-                        #if len(dictByUser[val]) < 5:
-                        dictByUser[val].append(key)
-                else:
-                        dictByUser[val] = [key]
+        max_val = max(value)
+        max_index = value.index(max_val)
+        idx = max_index
+        eps = 0.3
+        if random.random < eps:
+                idx = random.randint(0, len(value)-1)
+
+        if value[idx] in dictByUser:
+                dictByUser[value[idx]].append(key)
+        else:
+                dictByUser[value[idx]] = [key]
+
 
 for key,value in dictByUser.items():
-        sorted(value, reverse = True)
+        #sorted(value, reverse = True)
         # make sure that the number of the mail that every user receives is less than 5
-        print (key, value[:5])
-
-'''
-random.seed(1)
-means = [0.1, 0.1, 0.1, 0.1, 0.9]
-n_arms = len(means)
-random.shuffle(means)
-arms = map(lambda (mu): BernoulliArm(mu), means)
-print("Best arm is " + str(ind_max(means)))
-
-f = open("standard_results.tsv", "w")
-
-for epsilon in [0.1, 0.2, 0.3, 0.4, 0.5]:
-  algo = EpsilonGreedy(epsilon, [], [])
-  algo.initialize(n_arms)
-  results = test_algorithm(algo, arms, 50, 25)
-  for i in range(len(results[0])):
-      f.write(str(epsilon) + "\t")
-      f.write("\t".join([str(results[j][i]) for j in range(len(results))]) + "\n")
-f.close()
-'''
+        #print (key, value[:5])
+        print (key, value)
 
