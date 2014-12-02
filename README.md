@@ -30,3 +30,6 @@ Whichever arm we pull, we miss out on information about the other arms that we
 didn’t pull. Just like in real life, you only learn about the path you took and not the
 paths you could have taken.
 * Every time we experiment with an arm that isn’t the best arm, we lose reward because we could, at least in principle, have pulled on a better arm.
+
+
+A fixed 10% exploration rule: at the start of your experimentation, you'll choose options that you don't know much about far more rarely than you'd like to because you only try new options 10% of the time.
