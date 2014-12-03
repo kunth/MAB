@@ -31,5 +31,6 @@ didn’t pull. Just like in real life, you only learn about the path you took an
 paths you could have taken.
 * Every time we experiment with an arm that isn’t the best arm, we lose reward because we could, at least in principle, have pulled on a better arm.
 
-
 A fixed 10% exploration rule: at the start of your experimentation, you'll choose options that you don't know much about far more rarely than you'd like to because you only try new options 10% of the time.
+
+The settings that lead to lots of exploration learn quickly, but don't exploit often enough at the end; whereas the settings that lead to little exploration learn slowly, but do well at the end.
